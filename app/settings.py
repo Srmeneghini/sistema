@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-vl&%k4n(#jypmh55=ggc_@x!+k(w%5bp@6(70%e@^)=@xj2^!a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['#']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -88,8 +88,12 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'sge',
+        'USER': 'postgres',
+        'PASSWORD': '260623',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -127,7 +131,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 STATIC_URL = 'static/'
 
 # Default primary key field type
